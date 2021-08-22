@@ -1,0 +1,147 @@
+<html>
+    <head>
+        <title>Heart Failure Detection-app</title>
+    </head>
+    <body style = "background-color: rgb(77, 187, 238);">
+        <h1 style="text-align: center;color: rgb(2, 6, 245);">Detect weather the patient will survive or not</h1>
+        <h3 style="text-align: center;color: rgb(21, 21, 24);">
+          Try out these examples
+          [60,No,68,No,20, 119000, 2.9,127,male,yes,64] => death ||
+          [42.000,yes,86,no,35,365000.00,1.10,139,male,yes,201]=> safe</h3>
+        <form action="/heartfailuredetection" method="POST">
+          <ul>
+            <li>
+              <label for='Age'>Age:</label>
+              <input type = 'number' name = 'age' placeholder = 'age' required = 'required' />
+              <label for='Anaemia'>Anaemia:</label>
+              <input list="Anaemia" name = 'anaemia' placeholder = 'anaemia'>
+              <datalist id="Anaemia">
+                <option value="Yes">
+                <option value="No">
+              </datalist>
+              <label for='creatinine_phosphokinase'>CPK:</label>
+              <input type = 'number' name = 'creatinine_phosphokinase' placeholder = 'creatinine_phosphokinase' required = 'required' />
+              <label for='Diabetes'>Diabetes:</label>
+              <input list="Diabetes" name = 'diabetes' placeholder = 'Diabetes'>
+              <datalist id="Diabetes">
+                <option value="Yes">
+                <option value="No">
+              </datalist>
+              <label for='ejection_fraction'>ejection_fraction:</label>
+              <input type = 'number' name = 'ejection_fraction' placeholder = 'ejection_fraction' required = 'required' />
+              <label for='Platelets'>Platelets:</label>
+              <input type = 'number' name = 'platelets' placeholder = 'platelets' required = 'required' />
+              <label for='serum_creatinine'>serum_creatinine:</label>
+              <input type = 'number' step = '0.01' name = 'serum_creatinine' placeholder = 'serum_creatinine' required = 'required' />
+              <label for='Serum_sodium'>Serum_sodium:</label>
+              <input type = 'number' name = 'serum_sodium' placeholder = 'serum_sodium' required = 'required' />
+              <label for='Sex'>Sex:</label>
+              <input list="Sex" name = 'sex' placeholder = 'Sex'>
+              <datalist id="Sex">
+                <option value="Male">
+                <option value="Female">
+              </datalist>
+              <label for='Smoking'>Smoking:</label>
+              <input list="Smoking" name = 'smoking' placeholder = 'Smoking'>
+              <datalist id="Smoking">
+                <option value="Yes">
+                <option value="No">
+              </datalist>
+              <label for='time'>Time:</label>
+              <input type = 'number' name = 'time' placeholder = 'time' required = 'required' />
+            </li>
+            <button type = 'Submit'>Submit</button>
+            <li>
+              <label for="output">Prediction:</label>
+              <textarea id="text" name="output" placeholder="Predicted Result">{{final_output}}</textarea>
+            </li>
+            <h4 style="text-align: center;color: rgb(43, 38, 32);">
+              For more additional information scroll down to the end of the page...
+            </h4>
+            </div>
+          </ul>
+            <style>
+                form {
+  /* Center the form on the page */
+  margin: 0 auto;
+  width: 500px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid rgb(26, 25, 24);
+  border-radius: 1em;
+  color: rgb(30, 31, 27);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1.5em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  width: 120px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, textareas have a monospace font */
+  font: 1em sans-serif;
+
+  /* Uniform text field size */
+  width: 350px;
+  box-sizing: border-box;
+
+  /* Match form field borders */
+  border: 3px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Additional highlight for focused elements */
+  border-color: rgb(238, 10, 10);
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align:top;
+
+  /* Provide space to type some text */
+  height: 4em;
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin: 2rem;
+  position:relative;
+}
+            </style>
+        </form>
+        <h4 style="text-align: right;color: rgb(24, 24, 31);">-by Chandra Sekar(Machine Learning Engineer)</h4>
+        <h4 style="text-align: right;color: rgb(24, 24, 31);">Contact:- +91-8754092040/+91-8072258559</h4>
+        <h3 style="text-align: left;color: rgb(24, 24, 31);">Note:-</h3>
+        <h4 style="text-align: left;color: rgb(24, 24, 31);">
+          1. CPK-creatinine_phosphokinase: Normal range must be between Adult Male - 21 to 232 IU/L; Adult Female - 21 to 215 IU/L, Enter a range between 20-7900
+        </h4>
+        <h4 style="text-align: left;color: rgb(24, 24, 31);">2. Ejection-Fraction: 
+          A normal ejection fraction is about 50% to 75%, according to the American Heart Association. A borderline ejection fraction can range between 41% and 50%. Enter value between 15-80
+        </h4>
+        <h4 style="text-align: left;color: rgb(24, 24, 31);">
+          3. Platelets: A normal platelet count ranges from 150,000 to 450,000 platelets per microliter of blood. Having more than 450,000 platelets is a condition called thrombocytosis; having less than 150,000 is known as thrombocytopenia. Enter value between 25,000 - 850,000
+        </h4>
+        <h4 style="text-align: left;color: rgb(24, 24, 31);">4. Serum_creatinine: 
+          The typical range for serum creatinine is: For adult men, 0.74 to 1.35 mg/dL (65.4 to 119.3 micromoles/L) For adult women, 0.59 to 1.04 mg/dL (52.2 to 91.9 micromoles/L). Enter value between 0.5-9.5
+        </h4>
+        <h4 style="text-align: left;color: rgb(24, 24, 31);">5. Serum_sodium: 
+          A normal blood sodium level is between 135 and 145 milliequivalents per liter (mEq/L). Hyponatremia occurs when the sodium in your blood falls below 135 mEq/L. Many possible conditions and lifestyle factors can lead to hyponatremia, including: Certain medications.. Enter value between 110-150
+        </h4>
+    </body>
+</html>
