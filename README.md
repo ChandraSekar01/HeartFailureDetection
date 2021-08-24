@@ -49,17 +49,13 @@ Enter the following link in the browser
 Go to this link `https://id.heroku.com/login` and create an account with the same github account name
 
 8. Select Create an app and type the name of the app and select United States and click create app
-9. Select the `Deploy` tab and in the 2nd section click GitHub and in the search bar enter the name of the repository `HeartFailureDetection` and click on connect 
-10. Scroll down to the bottom in the Manul Deploy section click `Deploy Branch` and wait till the process gets completed, finally after everything gets done you can see the `view` button click on that to navigate to the app
- 
-  
-## Screenshots
+9. Select the Deploy tab and in the 2nd section click GitHub and in the search bar enter the name of the repository HeartFailureDetection and click on connect
 
-![App Screenshot](file:///C:/Users/chand/OneDrive/Pictures/Screenshots/Screenshot%20(5).png)
+![Screenshot (5)](https://user-images.githubusercontent.com/89004299/130363310-141f82f9-eda2-4674-8808-0511cb4e29ea.png)
 
-![App Screenshot](file:///C:/Users/chand/OneDrive/Pictures/Screenshots/Screenshot%20(7)_LI.jpg)
+![Screenshot (7)_LI](https://user-images.githubusercontent.com/89004299/130363323-a82dd2a6-93b9-43dc-a6b6-404062f650cc.jpg)
+10. Scroll down to the bottom in the Manul Deploy section click Deploy Branch and wait till the process gets completed, finally after everything gets done you can see the view button click on that to navigate to the app
 
-![App Screenshot](file:///C:/Users/chand/OneDrive/Pictures/Screenshots/Screenshot%20(8)_LI.jpg)
-
+![Screenshot (8)_LI](https://user-images.githubusercontent.com/89004299/130363335-ca861063-8a8b-4933-9e87-f0885dd55df5.jpg)
   
   
